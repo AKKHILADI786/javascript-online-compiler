@@ -6,6 +6,7 @@ app.use('/',express.static(__dirname+'/public'))
 ans="";
 function encript(req,res,next){
     console.log('encripting data')
+    ans="";
     name=req.query.data;
     console.log(name);
     for(a in name){
