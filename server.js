@@ -1,6 +1,6 @@
 const express=require('express')
 const app=express()
-
+const PORT=process.env.PORT|4444
 app.use('/',express.static(__dirname+'/public'))
 
 ans="";
@@ -32,6 +32,6 @@ function encode(req,res,next){
 app.get('/eval',encript,encode,(req,res)=>{
     res.send('The output of file is '+ ans)
 })
-app.listen(4321,()=>{
-    console.log('server host on http://localhost:4321')
+app.listen(PORT,()=>{
+    console.log(`server host on http://localhost:${PORT}`)
 })
